@@ -1,0 +1,83 @@
+body {
+    background: #333333;
+    font-family: 'Alfa Slab One', sans-serif, 'Arial';
+    color: rgba(0,238, 15, 0.993);
+  
+}
+
+.h-row{
+    margin-top: 40px;
+    margin-bottom: 10px;
+
+}
+
+h1, h2 {
+    font-family: 'Rubik Mono One', sans-serif;
+    font-weight: 500;
+    text-align: center;
+
+}
+
+.main-row {
+    margin-top: 30px;
+
+}
+
+#HM-image {
+    display: table-cell;
+    vertical-align: middle;
+    min-height: 300px;
+    border: #777777 solid;
+    padding: 5px;
+}
+
+#col-left {
+    border: #777777 solid thick;
+}
+
+#col-right {
+    border: #777777 solid thick;
+}
+
+#active-word {
+    margin-top: 30px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+#current-word {
+    margin-top: 80px;
+}
+
+#win-lose {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#wins {
+    font-size: 1.5em;
+}
+
+#losses {
+    font-size: 1.5em;
+}
+
+#guesses-left {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+#chosen-letters {
+    font-size: 1.5em;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
