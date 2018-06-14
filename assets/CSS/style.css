@@ -24,9 +24,8 @@ h1, h2 {
 }
 
 #HM-image {
-    display: table-cell;
-    vertical-align: middle;
-    min-height: 300px;
+    max-width: 280px;
+    margin: 30px;
     border: #777777 solid;
     padding: 5px;
 }
@@ -46,6 +45,7 @@ h1, h2 {
 }
 
 #current-word {
+    font-size: 1.8em;
     margin-top: 80px;
 }
 

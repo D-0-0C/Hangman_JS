@@ -19,7 +19,7 @@
   var wins = 0;
   var losses = 0;
 
-//This function is used to reset, randomize, & update the DOM
+//This function is used to reset, randomize, & update the variables involved for the basic function of the actual word & letters
   function startGame() {
     actual_Word = word[Math.floor(Math.random() * word.length)];
     letters = actual_Word.split("");
@@ -30,7 +30,6 @@
     guessedLetters = [];        
     document.getElementById("chosen-letters").innerHTML = guessedLetters
     
-
 
     guesses_Left = 14;
     incorrect_Letters = [];
