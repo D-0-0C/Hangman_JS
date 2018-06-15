@@ -51,23 +51,34 @@ startGame();
 
   
 // onkey press
-document.onkeypress = function (event) {
+    document.onkeypress = function (event) {
     // guesses left decreases
     guesses_Left--;
     // Shows guesses left
     document.getElementById("guesses-left").innerHTML = guesses_Left;
 
-    //Stored the guessed letters
+    //Stored the guessed letters, accounting for letter already selected, and not allowing guesses_left to deincrement 
+    var letter = event.key
+    if (guessedLetters.indexOf(letter) > -1){
+        alert("You have already selected this letter!")    
+        document.getElementById("guesses-left").innerHTML = guesses_Left++;
+
+        return
+
+    }
     guessedLetters.push(event.key)
     document.getElementById("chosen-letters").innerHTML = guessedLetters;
     
-    // Check for if the user lost & tracking losses
+    // Check for if the user lost & tracking # of losses (using setTimeout to allow page to update & paint)
     if (guesses_Left <= 0){
-        alert("You have lost! Please Try Again")
         losses++;
         document.getElementById("losses").innerHTML = losses;
-
+        window.setTimeout(function(){
+        alert("You have lost! Please Try Again")
+    
         startGame();
+
+        },1)
 
         return 
         
@@ -91,18 +102,23 @@ document.onkeypress = function (event) {
             underscoreFound = true;
         }
     }
+    //Checking to see if the user has fulfilled the win condition & tracking # of losses (using setTimeout to allow page to update & paint)
     if (underscoreFound == false) {
-        alert("You Win!");
-        wins++;
-        document.getElementById("wins").innerHTML = wins;
+        window.setTimeout(function(){
+            alert("You Win!");
+            wins++;
+            document.getElementById("wins").innerHTML = wins;
 
-        startGame();
+            startGame();
+
+        },1)
     }
 };
 
 //The function updates the current word on the DOM & adds spaces between the underscores
 function updatecurrentWord () {
     document.getElementById("current-word").innerHTML = underscoreLetters.join(" ");
+    return
 
 }
 
